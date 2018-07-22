@@ -1,0 +1,14 @@
+.ring{
+    fill: blue;
+    stroke: gray;
+}
+
+.extreme_ring{
+    fill: none;
+    stroke: black;
+}
+
+.border_ring{
+    fill: none;
+    stroke: #CCCCCC;
+}
