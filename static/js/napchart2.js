@@ -163,16 +163,22 @@ function create_event(start, end, lane){
 
 function add_event(start, end, lane){
     let arc = create_event(start, end, lane);
-    if (typeof arc != undefined){
+    if (arc != undefined){
 	event.push(arc)
     }
 }
 
 
 function update_event(){
-    event = event.map(function(d){
-	return create_event(d.start, d.end, d.lane);
-    })
+    event = event.reduce(function(acc, e){
+	let tmp = create_event(e.start, e.end, e.lane);
+	console.log("Create: ", tmp);
+	if (tmp != undefined){
+	    console.log("here");
+	    acc.push(tmp)
+	}
+	return acc;
+    },[]);
 }
 
 function add_events(){
